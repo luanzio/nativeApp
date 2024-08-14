@@ -32,7 +32,6 @@ App.tsx                 # Arquivo principal do aplicativo
 .env                    # Arquivo de variáveis de ambiente
 babel.config.js         # Configuração do Babel
 tsconfig.json           # Configuração do TypeScript
-README.md               # Documentação do projeto
 </code>
 </pre>
 
