@@ -47,7 +47,7 @@ tsconfig.json           # Configuração do TypeScript
 <ol>
   <li>Clone o repositório:
     <pre><code>git clone https://github.com/luanzio/nativeApp.git
-cd posts-app</code></pre>
+cd nativeApp</code></pre>
   </li>
   <li>Instale as dependências:
     <pre><code>npm install</code></pre>
