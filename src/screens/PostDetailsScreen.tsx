@@ -86,9 +86,6 @@ export const PostDetailsScreen: React.FC<Props> = ({ route }) => {
 };
 
 const styles = StyleSheet.create({
-    contentContainer: {
-        paddingBottom: 16,
-    },
     container: {
         flex: 1,
         padding: 16,
@@ -167,6 +164,9 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color: '#6c757d',
         marginTop: 4,
+    },
+    contentContainer: {
+        paddingBottom: 16,
     },
 });
 

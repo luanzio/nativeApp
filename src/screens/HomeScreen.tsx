@@ -12,7 +12,7 @@ export const HomeScreen: React.FC = () => {
     return (
         <View style={styles.container}>
             <Image source={require('../../assets/posts-logo.png')} style={styles.image} />
-            <Text style={styles.title}>Bem-Vindo ao App Posts</Text>
+            <Text style={styles.title}>Bem-Vindo ao App Posts!</Text>
             <Button title="Descubra Novos" onPress={() => navigation.navigate('PostList')} />
         </View>
     );
@@ -31,10 +31,10 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     image: {
-        width: 300, // Largura da imagem
-        height: 200, // Altura da imagem
-        marginBottom: 20, // Espaçamento abaixo da imagem
-        borderRadius: 10, // Borda arredondada para um visual mais agradável
+        width: 300,
+        height: 200,
+        marginBottom: 20,
+        borderRadius: 10,
     },
 });
 
