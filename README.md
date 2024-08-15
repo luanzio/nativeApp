@@ -53,7 +53,7 @@ cd nativeApp</code></pre>
     <pre><code>npm install</code></pre>
   </li>
   <li>Crie o arquivo <code>.env</code> na raiz do projeto e adicione o link da API:
-    <pre><code>API_URL=https://jsonplaceholder.typicode.com</code></pre>
+    <pre><code>API_BASE_URL=https://jsonplaceholder.typicode.com</code></pre>
   </li>
   <li>Execute o projeto:
     <pre><code>npm start</code></pre>
