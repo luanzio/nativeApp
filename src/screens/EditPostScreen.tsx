@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, TextInput, Button, StyleSheet, Text, Alert } from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native'; // Importa useRoute
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
-import { postUpdated, Post } from '../store/slices/postsSlice'; // Supondo que você tenha essa ação configurada
+import { postUpdated, Post } from '../store/slices/postsSlice';
 import { updatePost, getPost } from '../api/services/postsService';
 
 export const EditPostScreen: React.FC = () => {

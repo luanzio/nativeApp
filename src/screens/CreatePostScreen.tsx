@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Text, Alert } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../App';
+import { RootStackParamList } from '../navigation/navigation';
 import { useNavigation } from '@react-navigation/native';
 import { postAdded } from '../store/slices/postsSlice';
 import { createPost } from '../api/services/postsService';
