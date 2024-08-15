@@ -1,8 +1,9 @@
 import axios, { Method } from 'axios';
 import { Post, Comment } from '../../store/slices/postsSlice';
+import { API_BASE_URL } from '@env';
 
 const api = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com',
+    baseURL: API_BASE_URL,
 });
 
 const apiRequest = async <T>(method: Method, url: string, data?: any): Promise<T> => {

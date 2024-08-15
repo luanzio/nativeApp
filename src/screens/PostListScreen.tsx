@@ -4,7 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../store/store';
 import { fetchPosts } from '../store/slices/postsSlice';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../App';
+import { RootStackParamList } from '../navigation/navigation';
+import { API_BASE_URL } from '@env';
 
 type PostListScreenNavigationProp = StackNavigationProp<RootStackParamList, 'PostList'>;
 
@@ -24,7 +25,7 @@ const PostListScreen: React.FC<Props> = ({ navigation }) => {
 
     useEffect(() => {
         const fetchPhotos = async () => {
-            const photosResponse = await fetch('https://jsonplaceholder.typicode.com/photos');
+            const photosResponse = await fetch(API_BASE_URL + '/photos');
             const allPhotos = await photosResponse.json();
             const photoMap: { [key: number]: string } = {};
 
@@ -38,7 +39,7 @@ const PostListScreen: React.FC<Props> = ({ navigation }) => {
         };
 
         const fetchUsers = async () => {
-            const usersResponse = await fetch('https://jsonplaceholder.typicode.com/users');
+            const usersResponse = await fetch(API_BASE_URL + '/users');
             const allUsers = await usersResponse.json();
             const userMap: { [key: number]: string } = {};
 

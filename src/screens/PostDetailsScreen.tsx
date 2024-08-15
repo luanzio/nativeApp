@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../store/store';
 import { fetchComments } from '../store/slices/postsSlice';
 import { RouteProp } from '@react-navigation/native';
-import { RootStackParamList } from '../../App';
+import { RootStackParamList } from '../navigation/navigation';
+import { API_BASE_URL } from '@env';
 
 type PostDetailsScreenRouteProp = RouteProp<RootStackParamList, 'PostDetails'>;
 
@@ -29,12 +30,12 @@ export const PostDetailsScreen: React.FC<Props> = ({ route }) => {
         const fetchUserAndPhoto = async () => {
             if (post) {
                 // Buscar nome do usuário
-                const userResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`);
+                const userResponse = await fetch(API_BASE_URL + `/users/${post.userId}`);
                 const user = await userResponse.json();
                 setUsername(user.name);
 
                 // Buscar foto associada
-                const photosResponse = await fetch('https://jsonplaceholder.typicode.com/photos');
+                const photosResponse = await fetch(API_BASE_URL + '/photos');
                 const allPhotos = await photosResponse.json();
                 const photo = allPhotos.find((photo: { albumId: number; id: number }) => photo.albumId === post.userId);
                 setPhotoUrl(photo ? photo.url : '');
@@ -61,7 +62,7 @@ export const PostDetailsScreen: React.FC<Props> = ({ route }) => {
     }
 
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
             {post && (
                 <>
                     <Image
@@ -85,6 +86,9 @@ export const PostDetailsScreen: React.FC<Props> = ({ route }) => {
 };
 
 const styles = StyleSheet.create({
+    contentContainer: {
+        paddingBottom: 16,
+    },
     container: {
         flex: 1,
         padding: 16,
